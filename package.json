@@ -1,0 +1,1 @@
+{"scripts":{"start":"python3 -m http.server 4173","build":"find src -type f -name '*.js' -print0 | xargs -0 -n1 node --check && find src/components -type f -name '*.jsx' -print | sort"},"devDependencies":{}}
