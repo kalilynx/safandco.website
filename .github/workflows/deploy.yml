@@ -1,4 +1,4 @@
-name: Validate static prototype
+name: Deploy
 
 on:
   push:
@@ -6,9 +6,6 @@ on:
       - main
       - aitarot-ai-generator
   pull_request:
-    branches:
-      - main
-      - aitarot-ai-generator
 
 jobs:
   static-checks:

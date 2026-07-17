@@ -1,9 +1,8 @@
 {
   "scripts": {
     "start": "python3 -m http.server 4173",
-    "build": "node --check src/app.js && find src/ai -name \"*.js\" -print0 | xargs -0 -n1 node --check && npm run check:components",
-    "check:prompts": "node --check src/ai/prompt-engine/tarotPromptBuilder.js",
-    "check:components": "find src/components -name \"*.jsx\" -type f | sort"
+    "build": "node --check src/app.js && find src/ai -name \"*.js\" -print0 | xargs -0 -n1 node --check",
+    "check:prompts": "node --check src/ai/prompt-engine/tarotPromptBuilder.js"
   },
   "devDependencies": {}
 }

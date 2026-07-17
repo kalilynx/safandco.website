@@ -1,14 +1,10 @@
 # Arcarna Studio
 
-Arcarna Studio is an AI Tarot / Oracle / Angel Card Generator Studio for creating cohesive, publishable spiritual card decks from reference images, inspiration prompts, and reusable deck style DNA. This repository includes the static interactive prototype plus modular AI architecture scaffolding for future full-stack integration.
+Arcarna Studio is an AI Tarot / Oracle / Angel Card Generator Studio for creating cohesive, publishable spiritual card decks from reference images, inspiration prompts, and reusable deck style DNA.
 
 ## Feature branch
 
 Suggested branch: `aitarot-ai-generator`
-
-## Static prototype
-
-The current prototype lives in `index.html`, `src/styles.css`, and `src/app.js`. It demonstrates the Create Card workspace, creation modes, prompt preview, hidden style rules, Deck DNA toggles, and publication refinement tools without requiring a backend.
 
 ## Core workflow
 
