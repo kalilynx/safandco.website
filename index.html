@@ -1,6 +1,98 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Arcana Studio</title><link rel="stylesheet" href="/src/styles.css"></head><body><main>
-<section class="hero"><nav><span class="brand">✦ Arcana Studio</span><a href="#studio">Open studio</a></nav><div class="heroGrid"><div><p class="eyebrow">AI-powered symbolic wisdom studio</p><h1>Design cohesive tarot, oracle, and life-path decks with reflective intelligence.</h1><p class="lede">Arcana Studio turns style choices, optional references, numerology, astrology, and philosophy into a guided deck creation workflow—clearly framed as self-reflection rather than prediction.</p><div class="actions"><a class="primary" href="#studio">Start a deck</a><a class="secondary" href="#workflow">See workflow</a></div></div><div class="cardShowcase" aria-label="Generated card preview"><div class="tarotCard"><span>XVII</span><h2>The Star</h2><div class="star">✦</div><p>celestial renewal · stoic reflection · gold foil border</p></div></div></div></section>
-<section id="workflow" class="features"><article class="feature"><b>🎨</b><h3>Hidden Style Engine</h3><p>Pick human-readable directions while prompt rules handle palette, lighting, border, and hard negatives.</p></article><article class="feature"><b>🧬</b><h3>Deck DNA</h3><p>Freeze recurring motifs, brushwork, border language, and visual rhythm after the seed card.</p></article><article class="feature"><b>🛡️</b><h3>Creator-safe publishing</h3><p>Marketplace decks include human curation, provenance notes, and metadata-ready review checkpoints.</p></article><article class="feature"><b>📖</b><h3>Philosophy default-on</h3><p>Every card can ship with reflective prompts across Stoic, Socratic, Hermetic, and other traditions.</p></article></section>
-<section id="studio" class="studio"><div class="panel copy"><p class="eyebrow">Live prompt composer</p><h2>Assemble a deck brief</h2><p>Choose a creation mode and style stack. The preview demonstrates the concise prompt that would be routed to the generation pipeline.</p></div><form class="panel controls"><label>Creation mode<select id="mode"><option>Prompt only</option><option>Reference only</option><option selected>Prompt + reference hybrid</option><option>Inspire me</option></select></label><label>Artistic direction<select id="direction"></select></label><label>Aesthetic pack<select id="pack"></select></label><label>Vision prompt<textarea id="prompt">A reflective deck about courage, renewal, and sacred thresholds</textarea></label></form><div class="panel output"><b>🪄</b><h3>Optimized prompt</h3><p id="preview"></p><small>Negative safeguards include text, watermarks, logos, celebrity likeness, malformed anatomy, and clutter.</small></div></section>
-<section class="meanings"><article><b>01</b><h3>The Magician</h3><p>Focused will becomes craft when imagination accepts discipline.</p></article><article><b>02</b><h3>The High Priestess</h3><p>Inner knowledge asks for quiet before action.</p></article><article><b>03</b><h3>The Star</h3><p>Hope is not denial; it is orientation.</p></article><article><b>04</b><h3>The World</h3><p>Completion invites integration, not an ending.</p></article></section>
-</main><script src="/src/app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arcana Studio | AI Tarot Studio 2.0</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <nav class="topbar">
+          <span class="brand">✦ Arcana Studio</span>
+          <a href="#workspace">Create your card</a>
+        </nav>
+        <div class="heroGrid">
+          <div class="heroCopy">
+            <p class="eyebrow">AI Tarot Studio 2.0</p>
+            <h1>Create cohesive, publishable decks without prompt-engineering skills.</h1>
+            <p class="lede">Reference images, guided prompts, curated art directions, Deck DNA, and hidden style rules work together to keep every card original, consistent, and print-ready.</p>
+            <div class="actions">
+              <a class="primary" href="#workspace">Open creative studio</a>
+              <a class="secondary" href="#engine">Explore style engine</a>
+            </div>
+          </div>
+          <aside class="deckPreview" aria-label="Deck consistency preview">
+            <div class="card cardOne"><span>III</span><strong>The Empress</strong><small>golden renaissance · floral border</small></div>
+            <div class="card cardTwo"><span>XVII</span><strong>The Star</strong><small>same palette · recurring motifs</small></div>
+            <div class="dnaBadge">Deck DNA locked</div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="workspace" class="workspace">
+        <div class="sectionHeader">
+          <p class="eyebrow">New workspace</p>
+          <h2>✨ Create Your Card</h2>
+          <p>Choose a creative mode, attach inspiration, describe the card, and let the hidden prompt builder handle the production language.</p>
+        </div>
+        <div class="studioShell">
+          <section class="uploadPanel panel">
+            <h3>Reference Image</h3>
+            <div class="dropZone">
+              <strong>Upload, drag & drop, camera, or AI inspiration</strong>
+              <span>Style influence only: lighting, composition, palette, mood, texture, hierarchy, depth, and brush style.</span>
+            </div>
+            <div class="modeGrid" id="modeGrid" aria-label="Creation modes"></div>
+          </section>
+
+          <section class="builder panel">
+            <label>Describe your vision<textarea id="vision">The Empress as a wise garden queen beneath ancient olive trees, holding an illuminated scroll while celestial birds circle above.</textarea></label>
+            <div class="split">
+              <label>Choose Generator<select id="generator"></select></label>
+              <label>Artistic Direction<select id="direction"></select></label>
+            </div>
+            <div class="split">
+              <label>Visual Collection<select id="pack"></select></label>
+              <label>Lighting<select id="lighting"></select></label>
+            </div>
+            <div class="toggles">
+              <label><input id="consistent" type="checkbox" checked /> Keep Character Consistent</label>
+              <label><input id="deckDna" type="checkbox" checked /> Apply Deck DNA</label>
+            </div>
+            <button id="inspire" type="button">✨ Inspire Me</button>
+          </section>
+
+          <section class="output panel">
+            <div class="outputHeader"><span>Hidden Prompt Builder</span><strong id="qualityScore">Print-ready</strong></div>
+            <p id="promptPreview"></p>
+            <div class="ruleStack" id="ruleStack"></div>
+          </section>
+        </div>
+      </section>
+
+      <section id="engine" class="engine">
+        <div class="sectionHeader dark">
+          <p class="eyebrow">AI style engine</p>
+          <h2>Simple controls outside. Professional rules inside.</h2>
+        </div>
+        <div class="engineGrid">
+          <article><b>01</b><h3>Reference analysis</h3><p>Extracts lighting, camera angle, colour harmony, costume, facial proportions, texture, contrast, and visual hierarchy without copying protected work.</p></article>
+          <article><b>02</b><h3>Hidden genre rules</h3><p>Golden Renaissance, Dark Academia, Celestial Fantasy, and other directions inject palette, anatomy, atmosphere, border, and negative prompt guidance.</p></article>
+          <article><b>03</b><h3>Deck cohesion engine</h3><p>Stores brushwork, recurring motifs, border design, typography-safe zones, aspect ratio, and visual rhythm as reusable Deck DNA.</p></article>
+          <article><b>04</b><h3>Prompt optimizer</h3><p>Removes contradictions, improves clarity, balances composition, enforces consistency, and validates prompt length for the selected image model.</p></article>
+        </div>
+      </section>
+
+      <section class="tools">
+        <div class="sectionHeader">
+          <p class="eyebrow">One-click refinement</p>
+          <h2>Finish artwork for publication</h2>
+        </div>
+        <div class="toolCloud" id="toolCloud"></div>
+      </section>
+    </main>
+    <script src="/src/app.js"></script>
+  </body>
+</html>
